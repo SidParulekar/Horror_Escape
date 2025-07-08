@@ -64,5 +64,7 @@ public class LightSwitchView : MonoBehaviour, IInteractable
             lightSource.enabled = false;
         }
 
+        GameService.Instance.GetInstructionView().ShowInstruction(InstructionType.LightsOff);
+
     }
 }
