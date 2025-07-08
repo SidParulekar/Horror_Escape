@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class KeyView : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameUIView gameUIView;
     public void Interact()
     {
 
@@ -10,7 +9,8 @@ public class KeyView : MonoBehaviour, IInteractable
         GameService.Instance.GetInstructionView().HideInstruction();
         GameService.Instance.GetSoundView().PlaySoundEffects(SoundType.KeyPickUp);
         currentKeys++;
-        gameUIView.UpdateKeyText();
+
+        EventService.Instance.OnKeyPickUp.InvokeEvent(currentKeys);
 
         gameObject.SetActive(false);
     }
