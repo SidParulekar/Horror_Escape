@@ -16,6 +16,8 @@ public class PlayerSanity : MonoBehaviour
         EventService.Instance.RatRushEvent.AddListener(OnSupernaturalEvent);
         EventService.Instance.SkullDropEvent.AddListener(OnSupernaturalEvent);
 
+        EventService.Instance.OnPotionDrink.AddListener(OnDrankPotion);
+
     }
     void Update()
     {
@@ -71,5 +73,7 @@ public class PlayerSanity : MonoBehaviour
     {
         EventService.Instance.RatRushEvent.RemoveListener(OnSupernaturalEvent);
         EventService.Instance.SkullDropEvent.RemoveListener(OnSupernaturalEvent);
+        EventService.Instance.OnPotionDrink.RemoveListener(OnDrankPotion);
+
     }
 }
