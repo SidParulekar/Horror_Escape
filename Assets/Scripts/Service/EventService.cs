@@ -19,6 +19,8 @@ public class EventService
 
     public EventController RatRushEvent {  get; private set; }
 
+    public EventController SkullDropEvent { get; private set; }
+
     public EventController PlayerEscapedEvent { get; private set; }
     public EventController PlayerDeathEvent { get; private set; }
 
@@ -28,6 +30,7 @@ public class EventService
         OnKeyPickedUp = new EventController<int>();
         OnLightsOffByGhostEvent = new EventController();
         RatRushEvent = new EventController();
+        SkullDropEvent = new EventController();
 
         PlayerEscapedEvent = new EventController();
         PlayerDeathEvent = new EventController();

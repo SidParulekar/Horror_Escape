@@ -14,6 +14,8 @@ public class PlayerSanity : MonoBehaviour
         playerController = GameService.Instance.GetPlayerController();
 
         EventService.Instance.RatRushEvent.AddListener(OnSupernaturalEvent);
+        EventService.Instance.SkullDropEvent.AddListener(OnSupernaturalEvent);
+
     }
     void Update()
     {
@@ -68,5 +70,6 @@ public class PlayerSanity : MonoBehaviour
     private void OnDisable()
     {
         EventService.Instance.RatRushEvent.RemoveListener(OnSupernaturalEvent);
+        EventService.Instance.SkullDropEvent.RemoveListener(OnSupernaturalEvent);
     }
 }
