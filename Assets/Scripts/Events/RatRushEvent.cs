@@ -13,6 +13,7 @@ public class RatRushEvent : MonoBehaviour
     {
         if (other.GetComponent<PlayerView>() != null)
         {
+            EventService.Instance.RatRushEvent.InvokeEvent();
             onRatRush();
             GameService.Instance.GetSoundView().PlaySoundEffects(soundToPlay);
             GetComponent<Collider>().enabled = false;

@@ -12,6 +12,8 @@ public class PlayerSanity : MonoBehaviour
     {
         maxSanity = sanityLevel;
         playerController = GameService.Instance.GetPlayerController();
+
+        EventService.Instance.RatRushEvent.AddListener(OnSupernaturalEvent);
     }
     void Update()
     {
@@ -61,5 +63,10 @@ public class PlayerSanity : MonoBehaviour
     private void OnDrankPotion(int potionEffect)
     {
         decreaseSanity(potionEffect);
+    }
+
+    private void OnDisable()
+    {
+        EventService.Instance.RatRushEvent.RemoveListener(OnSupernaturalEvent);
     }
 }
